@@ -34,7 +34,7 @@
             <setBody id="_setBody2">
                 <simple resultType="java.lang.String">random(1,12)</simple>
             </setBody>
-            <to id="_to1" uri="activemq:queue:examples"/>
+            <to id="_to1" uri="activemq:topic:examples"/>
             <log id="_log1" message="${body}"/>
         </route>
     </camelContext>

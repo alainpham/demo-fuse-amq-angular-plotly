@@ -21,6 +21,10 @@ Graphs update in real time as messages are sent from the backend to the browser.
 			cd ./../instances/eventbrk/bin
 			./artemis run
 
+	* create a multicast address called examples
+
+			./artemis address create --no-anycast --multicast --name examples
+
 * Have maven installed
   * use the following maven settings  to enable  the right repositories
     * fuseapp/configuration/settings.xml
