@@ -30,7 +30,7 @@
             </setBody>
         </route>
         <route id="random">
-            <from id="_from1" uri="timer:timerName?period=250"/>
+            <from id="_from1" uri="timer:timerName?period=100"/>
             <setBody id="_setBody2">
                 <simple resultType="java.lang.String">random(1,12)</simple>
             </setBody>
