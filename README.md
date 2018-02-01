@@ -8,7 +8,7 @@ Graphs update in real time as messages are sent from the backend to the browser.
 
 ## Prerequisites
 
-* Have npm installed (optional)
+* Have npm installed (optional, only needed if you want to change and rebuild the angular app)
 * Install [angular-cli](https://angular.io/guide/quickstart) : `npm install -g @angular/cli` (optional)
 
 * Have AMQ 7 installed and running
@@ -30,6 +30,9 @@ Graphs update in real time as messages are sent from the backend to the browser.
     * fuseapp/configuration/settings.xml
 
 ## Easiest way to run the demo
+
+The angular app is already built and will be served statically by the fuse/spring-boot application. Files are in resources/static.
+
     cd fuseapp
     mvn --settings configuration/settings.xml spring-boot:run
 
