@@ -17,10 +17,23 @@ export class DummyComponent implements OnInit {
 
   ngOnInit() {
     // connecting to AMQ Broker
-    const server = 'ws://localhost:5672';
+    const server = 'wss://messaging-maas-alainpham.6a63.fuse-ignite.openshiftapps.com:443';
     this.amqpclient.on('message', this.onMsg.bind(this));
+    this.amqpclient.options.pusername = 'admin';
+    this.amqpclient.options.password = 'admin';
     const ws = this.amqpclient.websocket_connect(WebSocket);
-    const connection = this.amqpclient.connect({ 'connection_details': ws(server, ['binary', 'AMQPWSB10', 'amqp']), 'reconnect': true });
+
+
+
+    const connection = this.amqpclient.connect({
+      'connection_details':
+        ws(server,
+          ['binary', 'AMQPWSB10', 'amqp']),
+          'reconnect': true,
+          transport: 'tls',
+          servername: server,
+          rejectUnauthorized: false
+      });
     connection.open_receiver('examples');
     this.amqpsender = connection.open_sender('examples');
 

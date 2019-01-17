@@ -24,7 +24,7 @@
         <route id="producer">
             <from id="producer-starter" uri="netty4-http:http:0.0.0.0:8123/?disableStreamCache=true"/>
             <convertBodyTo id="_convertBodyTo1" type="java.lang.String"/>
-            <inOnly id="callQueue" uri="activemq:queue:examples"/>
+            <inOnly id="callQueue" uri="activemq:topic:examples"/>
             <setBody id="_setBody1">
                 <constant>ok</constant>
             </setBody>
